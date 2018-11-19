@@ -1,16 +1,16 @@
-{{- if .Values.nodeport.enabled }}
-  {{- $fullName := include "cp-kafka.fullname" . }}
+{{- if .Values.loadbalancer.enabled }}
+  {{- $port := .Values.loadbalancer.port }}
   {{- $brokers := .Values.brokers | int }}
-  {{- $servicePort := .Values.nodeport.servicePort }}
+  {{- $fullName := include "cp-kafka.fullname" . }}
+  {{- $port := .Values.loadbalancer.port }}
   {{- $root := . }}
   {{- range $i, $e := until $brokers }}
-    {{- $externalListenerPort := add $root.Values.nodeport.firstListenerPort $i }}
     {{- $responsiblePod := printf "%s-%d" (printf "%s" $fullName) $i }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $root.Release.Name }}-{{ $i }}-nodeport
+  name: {{ $root.Release.Name }}-{{ $i }}-loadbalancer
   labels:
     app: {{ include "cp-kafka.name" $root }}
     chart: {{ template "cp-kafka.chart" $root }}
@@ -18,12 +18,11 @@ metadata:
     heritage: {{ $root.Release.Service }}
     pod: {{ $responsiblePod }}
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-    - name: external-broker
-      port: {{ $servicePort }}
-      targetPort: {{ $externalListenerPort }}
-      nodePort: {{ $externalListenerPort }}
+    - name: external
+      port: {{ $port }}
+      targetPort: {{ $port }}
       protocol: TCP
   selector:
     app: {{ include "cp-kafka.name" $root }}
