@@ -77,10 +77,16 @@ spec:
             value: {{ template "cp-schema-registry.groupId" . }}
           - name: SCHEMA_REGISTRY_MASTER_ELIGIBILITY
             value: "true"
+          - name: SCHEMA_REGISTRY_HEAP_OPTS
+            value: "{{ .Values.heapOptions }}"
           {{ range $configName, $configValue := .Values.configurationOverrides }}
           - name: SCHEMA_REGISTRY_{{ $configName | replace "." "_" | upper }}
-            value: {{ $configValue }}
+            value: {{ $configValue | quote }}
           {{ end }}
+          {{- range $key, $value := .Values.customEnv }}
+          - name: {{ $key | quote }}
+            value: {{ $value | quote }}
+          {{- end }}
           {{- if .Values.schemaRegistryOpts }}
           - name: SCHEMA_REGISTRY_OPTS
             value: "{{ .Values.schemaRegistryOpts }}"
