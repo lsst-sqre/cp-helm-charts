@@ -9,6 +9,9 @@
 ## Number of Kafka brokers
 brokers: 3
 
+## Number of Kafka load-balancers
+loadbalancers: 1 
+
 ## Image Info
 ## ref: https://hub.docker.com/r/confluentinc/cp-kafka/
 image: confluentinc/cp-kafka
