@@ -1,10 +1,10 @@
 {{- if .Values.loadbalancer.enabled }}
   {{- $port := .Values.loadbalancer.port }}
-  {{- $brokers := .Values.brokers | int }}
+  {{- $loadbalancers := .Values.loadbalancers | int }}
   {{- $fullName := include "cp-kafka.fullname" . }}
   {{- $port := .Values.loadbalancer.port }}
   {{- $root := . }}
-  {{- range $i, $e := until $brokers }}
+  {{- range $i, $e := until $loadbalancers }}
     {{- $responsiblePod := printf "%s-%d" (printf "%s" $fullName) $i }}
 ---
 apiVersion: v1
