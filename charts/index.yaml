@@ -1,0 +1,63 @@
+apiVersion: v1
+entries:
+  cp-kafka:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.172103596-04:00"
+    description: A Helm chart for Confluent Kafka on Kubernetes
+    digest: 923510a3082abb7a5da19342b143d9fa5b2883ae680868705c96d6edd41e9629
+    name: cp-kafka
+    urls:
+    - cp-kafka-0.1.0.tgz
+    version: 0.1.0
+  cp-kafka-connect:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.172464281-04:00"
+    description: A Helm chart for Confluent Kafka Connect on Kubernetes
+    digest: 6a375819df29b88c5729265d5ee6e8bb8b00976d807b6944b277b1d0ad00d99f
+    name: cp-kafka-connect
+    urls:
+    - cp-kafka-connect-0.1.0.tgz
+    version: 0.1.0
+  cp-kafka-rest:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.172840702-04:00"
+    description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
+    digest: 5bd97d27867194fb28a7c6b3e5f71e1471d3323408b23d8d1634efcb1f868c4f
+    name: cp-kafka-rest
+    urls:
+    - cp-kafka-rest-0.1.0.tgz
+    version: 0.1.0
+  cp-ksql-server:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.173245372-04:00"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: 161ef6302a1a03c328f6fe097e3bba2e6bfe2c501366d751c4a854bd5669047e
+    name: cp-ksql-server
+    urls:
+    - cp-ksql-server-0.1.0.tgz
+    version: 0.1.0
+  cp-schema-registry:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.173588326-04:00"
+    description: A Helm chart for Confluent Schema Registry on Kubernetes
+    digest: e2694a2690dbf285808f6a63e68e6fb33be55ade45d4fa3b7275500f1911e2fd
+    name: cp-schema-registry
+    urls:
+    - cp-schema-registry-0.1.0.tgz
+    version: 0.1.0
+  cp-zookeeper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:25.174025694-04:00"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: 447203c605ad659c14003c7afccb1ca63dfba15721112411b4615a3c4928861c
+    name: cp-zookeeper
+    urls:
+    - cp-zookeeper-0.1.0.tgz
+    version: 0.1.0
+generated: "2019-06-24T15:03:25.170967481-04:00"

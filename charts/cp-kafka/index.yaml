@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  cp-zookeeper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-06-24T15:03:16.316504295-04:00"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: 2342f5e24574fd1b1177a618a863701124600533cf83cb3c63cd6e17da0c2b58
+    name: cp-zookeeper
+    urls:
+    - charts/cp-zookeeper-0.1.1.tgz
+    version: 0.1.1
+generated: "2019-06-24T15:03:16.315924027-04:00"
