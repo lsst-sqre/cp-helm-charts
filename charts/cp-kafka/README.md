@@ -87,8 +87,7 @@ There are
 1. A [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) `boiling-heron-cp-kafka` which contains 3 Kafka [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/): `boiling-heron-cp-kafka-<0|1|2>`. Each Pod has a container running a Kafka Broker and an optional sidecar JMX Exporter Container.
 1. A [Service](https://kubernetes.io/docs/concepts/services-networking/service/) `boiling-heron-cp-kafka` for clients to connect to Kafka.
 1. A [Headless Service](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services) `boiling-heron-cp-kafka-headless` to control the network domain for the Kafka processes.
-1. A group(N = number of brokers) of [NodePort Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport) `boiling-heron-cp-kafka-${i}-external` to allow access to Kafka Cluster from outside. At most one of NodePort and LoadBalancer can be enabled.
-1. A group(N = number of brokers) of [LoadBalancer Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer) `boiling-heron-cp-kafka-${i}-external` to allow access to Kafka Cluster from outside. At most one of NodePort and LoadBalancer can be enabled.
+1. A group(N = number of brokers) of [NodePort Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport) `boiling-heron-cp-kafka-${i}-external` to allow access to Kafka Cluster from outside.
 1. A [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/) which contains configuration for Prometheus JMX Exporter.
 
 ## Configuration
@@ -184,13 +183,8 @@ The configuration parameters in this section control the resources requested and
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
 | `nodeport.enabled` | Whether or not to allow access to kafka cluster from outside k8s through NodePort. | `false` |
-| `nodeport.servicePort` | The Port broker will advertise to external
-producers and consumers (NodePort).  | `19092` |
+| `nodeport.servicePort` | The Port broker will advertise to external producers and consumers.  | `19092` |
 | `nodeport.firstListenerPort` | The first NodePort that Kafka Broker will use for advertising to external producers and consumers. For each broker, advertise.listeners port for external will be set to `31090 + {index of broker pod}`. | `31090` |
-| `loadbalancer.enabled` | Whether or not to allow access to kafka cluster from outside k8s through NodePort. | `false` |
-| `loadbalancer.port` | The Port broker will advertise to external
-producers and consumers (LoadBalancer).  | `9094` |
-
 
 ### Deployment Topology
 

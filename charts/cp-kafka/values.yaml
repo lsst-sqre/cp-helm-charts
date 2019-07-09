@@ -121,10 +121,6 @@ nodeport:
   servicePort: 19092
   firstListenerPort: 31090
 
-loadbalancer:
-  enabled: true
-  port: 9094
-
 ## ------------------------------------------------------
 ## Zookeeper
 ## ------------------------------------------------------

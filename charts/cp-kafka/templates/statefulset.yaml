@@ -73,12 +73,7 @@ spec:
         ports:
         - containerPort: 9092
           name: kafka
-{{- if .Values.loadbalancer.enabled }}
-        - containerPort: 9094
-          name: external
-{{- end }}
-
-{{- if .Values.prometheus.jmx.enabled }}
+        {{- if .Values.prometheus.jmx.enabled }}
         - containerPort: {{ .Values.jmx.port }}
           name: jmx
         {{- end }}
