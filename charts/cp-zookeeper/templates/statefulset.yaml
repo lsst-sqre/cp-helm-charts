@@ -10,6 +10,10 @@ metadata:
 spec:
   serviceName: {{ template "cp-zookeeper.fullname" . }}-headless
   podManagementPolicy: {{ .Values.podManagementPolicy }}
+  selector:
+    matchLabels:
+      app: {{ include "cp-zookeeper.name" . }}
+      release: {{ .Release.Name }}
   replicas: {{ default 3 .Values.servers }}
   updateStrategy:
     type: {{ .Values.updateStrategy }}

@@ -3,11 +3,47 @@ entries:
   cp-helm-charts:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-03T08:33:12.10095-07:00"
+    created: "2020-02-03T09:00:53.70067-07:00"
     description: A Helm chart for Confluent Open Source
-    digest: cbd34d2d2351fe98dfe8be0e8d7e9dcf15de7cdb6c993c6e112f359d802d3c7d
+    digest: 9bcec048b9a0d25536f351d12d5d658de6168cd892247c43e958c8e6609e5a24
     name: cp-helm-charts
     urls:
     - cp-helm-charts-0.1.4.tgz
     version: 0.1.4
-generated: "2020-02-03T08:33:12.096325-07:00"
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-03T09:00:53.69628-07:00"
+    description: A Helm chart for Confluent Open Source
+    digest: 2cbc9840b97f09cfbd66abdcdcb4a2be8d86feb8552fe8059d630df5a427045e
+    name: cp-helm-charts
+    urls:
+    - cp-helm-charts-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-03T09:00:53.670224-07:00"
+    description: A Helm chart for Confluent Open Source
+    digest: 7115b07a73a0b4c859651a07a6a926f01e2e99cbeb1403bebbc502ea8422d98a
+    name: cp-helm-charts
+    urls:
+    - cp-helm-charts-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-03T09:00:53.638121-07:00"
+    description: A Helm chart for Confluent Open Source
+    digest: 445c92c31fbcb4c9e2d4a8b885305aba14b4f07aafd1715d4d1983f2219054d2
+    name: cp-helm-charts
+    urls:
+    - cp-helm-charts-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-02-03T09:00:53.628587-07:00"
+    description: A Helm chart for Confluent Open Source
+    digest: de1696d67b7388b958f1cd901e0bdc5d52c193e568e55e1ce4572dcfcbc4ef55
+    name: cp-helm-charts
+    urls:
+    - cp-helm-charts-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-02-03T09:00:53.614428-07:00"
