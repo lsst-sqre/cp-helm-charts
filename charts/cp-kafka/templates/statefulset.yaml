@@ -10,6 +10,10 @@ metadata:
 spec:
   serviceName: {{ template "cp-kafka.fullname" . }}-headless
   podManagementPolicy: {{ .Values.podManagementPolicy }}
+  selector:
+    matchLabels:
+      app: {{ include "cp-kafka.name" . }}
+      release: {{ .Release.Name }}
   replicas: {{ default 3 .Values.brokers }}
   updateStrategy:
     type: {{ .Values.updateStrategy }}
