@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cp-control-center.fullname" . }}
@@ -61,7 +61,7 @@ spec:
             {{- range $key, $value := .Values.customEnv }}
             - name: {{ $key | quote }}
               value: {{ $value | quote }}
-            {{- end }}            
+            {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
